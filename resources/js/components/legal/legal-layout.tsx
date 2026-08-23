@@ -128,7 +128,7 @@ export function LegalSection({
     return (
         <section
             id={id}
-            className="scroll-mt-24 border-t border-[#1a141010] pt-10 first:border-t-0 first:pt-0 dark:border-white/10"
+            className="scroll-mt-24 border-t border-[#1a141010] py-10 first:border-t-0 first:py-0 dark:border-white/10"
         >
             <h2 className="text-xl font-semibold tracking-tight text-[#1a1410] dark:text-white">
                 {title}

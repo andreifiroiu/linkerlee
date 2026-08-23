@@ -13,7 +13,7 @@ import {
 import { privacy } from '@/routes/legal';
 
 const LAST_UPDATED = '22 August 2026';
-const CONTACT_EMAIL = 'hello@linkerlee.com';
+const CONTACT_EMAIL = 'linkerlee@neti.ro';
 
 const sections = [
     { id: 'agreement', title: 'The agreement' },

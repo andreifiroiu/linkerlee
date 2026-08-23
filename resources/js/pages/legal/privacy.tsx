@@ -10,7 +10,7 @@ import { EXTENSION_REPOSITORY_URL } from '@/lib/repositories';
 import { terms } from '@/routes/legal';
 
 const LAST_UPDATED = '22 August 2026';
-const CONTACT_EMAIL = 'hello@linkerlee.com';
+const CONTACT_EMAIL = 'linkerlee@neti.ro';
 
 const sections = [
     { id: 'scope', title: 'Scope' },
@@ -68,6 +68,7 @@ export default function Privacy({
                     policy does not apply to it — only to the hosted service at
                     linkerlee.com.
                 </p>
+                <p></p>
             </LegalSection>
 
             <LegalSection id="what-we-collect" title="2. What we collect">
@@ -185,16 +186,8 @@ export default function Privacy({
 
             <LegalSection id="extension" title="6. Browser extension">
                 <p>
-                    The official Linkerlee Bookmarker extension is published on{' '}
-                    {EXTENSION_STORES.filter((store) => store.href !== null)
-                        .map((store) => store.name)
-                        .join(' and ')}
-                    , and its source is public at{' '}
-                    <LegalLink href={EXTENSION_REPOSITORY_URL}>
-                        linkerlee-app/linkerlee-browser-extension
-                    </LegalLink>
-                    . It is a client for your own account, and it holds no
-                    account of its own.
+                    The official Linkerlee Bookmarker extension is a client for
+                    your own account, and it holds no account of its own.
                 </p>
                 <p>
                     <strong>What it stores on your device.</strong> Two
@@ -430,13 +423,9 @@ export default function Privacy({
 
             <LegalSection id="contact" title="15. Contact">
                 <p>
-                    Privacy questions, data requests, and security reports:{' '}
-                    <LegalLink href={`mailto:${CONTACT_EMAIL}`}>
-                        {CONTACT_EMAIL}
-                    </LegalLink>
-                    . Anything else:{' '}
-                    <LegalLink href="mailto:hello@linkerlee.com">
-                        hello@linkerlee.com
+                    Privacy questions, data requests, security reports, or anything else:{' '}
+                    <LegalLink href="mailto:linkerlee@neti.ro">
+                        linkerlee@neti.ro
                     </LegalLink>
                     .
                 </p>

@@ -109,7 +109,7 @@ export function LandingFooter() {
                             },
                             {
                                 label: 'Contact',
-                                href: 'mailto:hello@linkerlee.com',
+                                href: 'mailto:linkerlee@neti.ro',
                             },
                         ]}
                     />

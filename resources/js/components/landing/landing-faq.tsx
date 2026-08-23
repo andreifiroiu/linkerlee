@@ -47,9 +47,9 @@ export function LandingFAQ() {
                         Still wondering about something? Email{' '}
                         <a
                             className="text-[#c97208] underline-offset-4 hover:underline dark:text-[#ffc266]"
-                            href="mailto:hello@linkerlee.com"
+                            href="mailto:linkerlee@neti.ro"
                         >
-                            hello@linkerlee.com
+                            linkerlee@neti.ro
                         </a>
                         .
                     </p>

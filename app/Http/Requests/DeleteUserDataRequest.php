@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\UserDataType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class DeleteUserDataRequest extends FormRequest
 {
@@ -23,8 +25,18 @@ class DeleteUserDataRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'deleteOptions' => 'required|array',
-            'deleteOptions.*' => 'string',
+            'deleteOptions' => ['required', 'array'],
+            'deleteOptions.*' => ['string', Rule::enum(UserDataType::class)],
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'deleteOptions.*.enum' => 'There is nothing to delete by that name.',
         ];
     }
 }

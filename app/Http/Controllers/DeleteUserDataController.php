@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DeleteUserDataRequest;
 use App\Services\DeleteUserDataService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class DeleteUserDataController extends Controller
 {
-    public function delete(DeleteUserDataRequest $request, DeleteUserDataService $deleteUserDataService)
+    public function delete(DeleteUserDataRequest $request, DeleteUserDataService $deleteUserDataService): RedirectResponse
     {
-        $deleteOptions = $request->validated('deleteOptions');
+        $deleteUserDataService->deleteUserData($request->validated('deleteOptions'), Auth::user());
 
-        $deleteUserDataService->deleteUserData($deleteOptions, Auth::user());
+        return back();
     }
 }

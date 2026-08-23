@@ -96,14 +96,36 @@ class GroupService
      */
     public function removeDeletedTagFromQueryOptions(int $tagId, User $user): void
     {
-        Group::where('user_id', $user->id)->get()->each(function (Group $group) use ($tagId): void {
+        $this->removeDeletedTagsFromQueryOptions([$tagId], $user);
+    }
+
+    /**
+     * Remove several deleted tag IDs from all group query options in one pass.
+     *
+     * Deleting tags in bulk would otherwise walk every group once per tag, so
+     * the groups are read once and each is saved at most once.
+     *
+     * @param  array<int, int>  $tagIds
+     */
+    public function removeDeletedTagsFromQueryOptions(array $tagIds, User $user): void
+    {
+        if ($tagIds === []) {
+            return;
+        }
+
+        $deletedIds = array_flip($tagIds);
+
+        Group::where('user_id', $user->id)->get()->each(function (Group $group) use ($deletedIds): void {
             $queryOptions = $group->query_options ?? [];
             $changed = false;
 
-            foreach ($queryOptions as $key => $tagIds) {
-                $filtered = array_values(array_filter($tagIds, fn ($id) => $id !== $tagId));
+            foreach ($queryOptions as $key => $ruleTagIds) {
+                $filtered = array_values(array_filter(
+                    $ruleTagIds,
+                    fn ($id) => ! isset($deletedIds[$id]),
+                ));
 
-                if (count($filtered) !== count($tagIds)) {
+                if (count($filtered) !== count($ruleTagIds)) {
                     $queryOptions[$key] = $filtered;
                     $changed = true;
                 }

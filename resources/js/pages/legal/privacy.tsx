@@ -5,8 +5,6 @@ import {
     LegalNote,
     LegalSection,
 } from '@/components/legal/legal-layout';
-import { EXTENSION_STORES } from '@/lib/extensions';
-import { EXTENSION_REPOSITORY_URL } from '@/lib/repositories';
 import { terms } from '@/routes/legal';
 
 const LAST_UPDATED = '22 August 2026';
@@ -423,7 +421,8 @@ export default function Privacy({
 
             <LegalSection id="contact" title="15. Contact">
                 <p>
-                    Privacy questions, data requests, security reports, or anything else:{' '}
+                    Privacy questions, data requests, security reports, or
+                    anything else:{' '}
                     <LegalLink href="mailto:linkerlee@neti.ro">
                         linkerlee@neti.ro
                     </LegalLink>

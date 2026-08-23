@@ -24,6 +24,25 @@ class Tag extends \Spatie\Tags\Tag implements Searchable
     }
 
     /**
+     * The tags in use by one named user's links, archived links included.
+     *
+     * Tag rows carry no owner of their own, so "a user's tags" can only ever
+     * mean the ones hanging off that user's links. This differs from
+     * `filterByCurrentUser` in two ways: it names the user instead of reading
+     * the session, and it counts archived links, which keep their tags against
+     * the day they are restored.
+     */
+    public function scopeFilterByUser(Builder $query, int $userId): Builder
+    {
+        return $query->whereIn('id',
+            DB::table('taggables')
+                ->select('tag_id')
+                ->where('taggable_type', Link::class)
+                ->whereIn('taggable_id', Link::withTrashed()->where('user_id', $userId)->select('id'))
+        );
+    }
+
+    /**
      * Get all links tagged with this tag.
      */
     public function links(): MorphToMany

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Settings\ApiTokenController;
+use App\Http\Controllers\Settings\DataController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use App\Http\Controllers\Settings\TwoFactorAuthenticationController;
@@ -29,6 +30,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('settings/two-factor', [TwoFactorAuthenticationController::class, 'show'])
         ->name('two-factor.show');
+
+    Route::get('settings/data', [DataController::class, 'edit'])->name('data.edit');
 
     Route::get('settings/api-tokens', [ApiTokenController::class, 'index'])->name('api-tokens.index');
     Route::post('settings/api-tokens', [ApiTokenController::class, 'store'])->name('api-tokens.store');

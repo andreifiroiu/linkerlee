@@ -7,6 +7,7 @@ import { useCurrentUrl } from '@/hooks/use-current-url';
 import { cn, toUrl } from '@/lib/utils';
 import { index as apiTokensIndex } from '@/routes/api-tokens';
 import { edit as editAppearance } from '@/routes/appearance';
+import { edit as editData } from '@/routes/data';
 import { edit } from '@/routes/profile';
 import { show } from '@/routes/two-factor';
 import { edit as editPassword } from '@/routes/user-password';
@@ -31,6 +32,11 @@ const sidebarNavItems: NavItem[] = [
     {
         title: 'API tokens',
         href: apiTokensIndex(),
+        icon: null,
+    },
+    {
+        title: 'Data',
+        href: editData(),
         icon: null,
     },
     {

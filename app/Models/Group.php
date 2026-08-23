@@ -4,12 +4,14 @@ namespace App\Models;
 
 use App\Concerns\HasCurrentUserScope;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
@@ -30,6 +32,25 @@ class Group extends Model implements Searchable
     ];
 
     public string $searchableType = 'Groups';
+
+    /**
+     * Maximum length of the `title` column.
+     */
+    public const MAX_TITLE_LENGTH = 255;
+
+    /**
+     * Folder names arriving from an imported bookmarks file are whatever the
+     * other application allowed, which is not always what this column holds.
+     * Keeping what fits matches how `Link` treats a page title, and beats
+     * failing an entire import over one long folder name. The rule editor
+     * still validates the length, so nothing typed in the app is silently cut.
+     */
+    protected function title(): Attribute
+    {
+        return Attribute::set(
+            fn (?string $value) => $value === null ? null : Str::limit($value, self::MAX_TITLE_LENGTH, ''),
+        );
+    }
 
     /**
      * The query option keys, in the order the rule editor presents them.

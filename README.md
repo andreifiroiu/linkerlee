@@ -44,9 +44,17 @@ licensed and self-hostable — see [Quick start](#quick-start).
 
 ## Browser extension
 
-LinkerLee has an official Chrome extension, developed in its own repository:
+LinkerLee has an official browser extension, **Linkerlee Bookmarker**, developed in its own
+repository:
 
 ### → **[linkerlee-app/linkerlee-browser-extension](https://github.com/linkerlee-app/linkerlee-browser-extension)**
+
+Install it from either store, or build it from source:
+
+- **Firefox** — [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/linkerlee-bookmarker/)
+  *(Firefox, Firefox for Android)*
+- **Chrome** — [Chrome Web Store](https://chromewebstore.google.com/detail/linkerlee-bookmarker/mahiooindjjfeahbdmndhhkhigaopaek)
+  *(Chrome, Edge, Brave, Arc, Vivaldi)*
 
 Click the toolbar icon on any page and the popup pre-fills the URL and title, shows tags that
 look relevant to the page content, and saves in one click. It also recognises pages you have
@@ -278,7 +286,7 @@ Not built, but intended. Listed here so nobody mistakes intent for reality:
 - Scheduling and reminders for links to revisit
 - Outbound webhooks for link events
 - An analytics dashboard for activity and popular tags
-- Firefox and Safari extensions
+- A Safari extension
 - Mobile apps
 
 ## Contributing

@@ -75,7 +75,7 @@ export default function ApiTokens({ tokens, plainTextToken }: Props) {
                     <Heading
                         variant="small"
                         title="API tokens"
-                        description="Create tokens to authenticate the Chrome extension or other clients with the Linkerlee API."
+                        description="Create tokens to authenticate the browser extension or other clients with the Linkerlee API."
                     />
 
                     {plainTextToken && (
@@ -118,7 +118,7 @@ export default function ApiTokens({ tokens, plainTextToken }: Props) {
                                         id="name"
                                         name="name"
                                         required
-                                        placeholder="e.g. Chrome extension"
+                                        placeholder="e.g. Browser extension"
                                     />
                                     <InputError message={errors.name} />
                                 </div>

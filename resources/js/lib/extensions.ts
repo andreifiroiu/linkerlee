@@ -19,6 +19,9 @@ export type ExtensionStore = {
 export const FIREFOX_ADDON_URL =
     'https://addons.mozilla.org/en-US/firefox/addon/linkerlee-bookmarker/';
 
+export const CHROME_WEB_STORE_URL =
+    'https://chromewebstore.google.com/detail/linkerlee-bookmarker/mahiooindjjfeahbdmndhhkhigaopaek';
+
 export const EXTENSION_STORES: ExtensionStore[] = [
     {
         id: 'firefox',
@@ -33,7 +36,7 @@ export const EXTENSION_STORES: ExtensionStore[] = [
         name: 'Chrome Web Store',
         shortName: 'Chrome',
         browsers: 'Chrome · Edge · Brave · Arc · Vivaldi',
-        href: null,
-        note: 'Coming soon. Until it lands, load the unpacked build from GitHub.',
+        href: CHROME_WEB_STORE_URL,
+        note: 'Reviewed and published by Google.',
     },
 ];

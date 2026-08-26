@@ -1,5 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { Link } from '@inertiajs/react';
+import { ExtensionPromoCard } from '@/components/extension-promo-card';
 import AppLayout from '@/layouts/app-layout';
 import { dashboard } from '@/routes';
 import * as linksRoute from '@/routes/links';
@@ -83,6 +84,8 @@ export default function Dashboard({
                         </p>
                     </div>
                 </div>
+
+                <ExtensionPromoCard />
 
                 <div className="grid gap-4 md:grid-cols-2">
                     <div className="rounded-xl border border-sidebar-border/70 p-4 dark:border-sidebar-border">

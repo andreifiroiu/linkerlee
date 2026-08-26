@@ -49,7 +49,10 @@ Roadmap in [README.md](README.md) for what is merely intended.
 - **API Reference**: [docs/API.md](docs/API.md) - Complete REST API documentation
 - **OpenAPI Spec**: [docs/openapi.yaml](docs/openapi.yaml) - Import into Postman, Insomnia, or Swagger UI
 - **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md) - setup, definition of done, PR workflow
-- **Browser extension**: <https://github.com/linkerlee-app/linkerlee-browser-extension>
+- **Browser extension**: <https://github.com/linkerlee-app/linkerlee-browser-extension> —
+  published as *Linkerlee Bookmarker* on both
+  [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/linkerlee-bookmarker/) and the
+  [Chrome Web Store](https://chromewebstore.google.com/detail/linkerlee-bookmarker/mahiooindjjfeahbdmndhhkhigaopaek)
 
 ## Directory Structure
 

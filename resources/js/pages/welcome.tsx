@@ -46,9 +46,9 @@ export default function Welcome({
                 <LandingNav user={user} canRegister={canRegister} />
                 <main>
                     <LandingHero user={user} canRegister={canRegister} />
+                    <LandingExtensions />
                     <LandingFeatures />
                     <LandingPreview />
-                    <LandingExtensions />
                     <LandingPricing />
                     <LandingOpenSource />
                     <LandingFAQ />
